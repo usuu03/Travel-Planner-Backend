@@ -10,9 +10,19 @@ public class Destination {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String cityName;
-
     private String countryName;
+    private String description;
     private double price;
+
+    public Destination() {
+    }
+
+    public Destination(String cityName, String countryName, String description, double price) {
+        this.cityName = cityName;
+        this.countryName = countryName;
+        this.description = description;
+        this.price = price;
+    }
 
     public Long getId() {
         return id;
@@ -38,6 +48,14 @@ public class Destination {
         this.countryName = countryName;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public double getPrice() {
         return price;
     }
@@ -52,6 +70,7 @@ public class Destination {
                 "id=" + id +
                 ", cityName='" + cityName + '\'' +
                 ", countryName='" + countryName + '\'' +
+                ", description='" + description + '\'' +
                 ", price=" + price +
                 '}';
     }
